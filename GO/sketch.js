@@ -3,7 +3,7 @@ var click = false;
 var tile = {
   x: NaN,
   y: NaN
-}
+};
 var player = 1;
 
 function setup() {
@@ -43,7 +43,6 @@ function draw() {
         ellipse(f * 60 + 30, b * 60 + 30, 60, 60);
       }
     }
-
 
   }
 detectTile();
