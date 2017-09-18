@@ -61,6 +61,15 @@ function mousePressed () {
       }
     }
   }
+  if (remove) {
+    for(var f = 0; f < 19; f ++) {
+      for(var b = 0; b < 19; b ++) {
+        if (mouseX > f * 60 && mouseX < f * 60 + 60 && mouseY > b * 60 && mouseY < b * 60 + 60 && player == 1 && board[f][b] !== 2) {
+          board[f][b] = 0;
+        }
+      }
+    }
+  }
 }
 
 
