@@ -7,7 +7,7 @@ baseCircle = {
 }
 var accHit = 1;
 var accMissed = 1;
-var spawnSpeed = 25;
+var spawnSpeed = 40;
 var gone = 0;
 
 function preload() {

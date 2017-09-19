@@ -23,6 +23,8 @@ function startGame() {
     image(lives, 560, 50, 50, 50);
   } else if (gone == 2) {
     image(lives, 500, 50, 50, 50);
+  } else if (gone > 2) {
+    adjkghsjkt
   }
 
   for (i = 0; i < circles.length; i++) {
