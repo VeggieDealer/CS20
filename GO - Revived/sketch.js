@@ -110,10 +110,10 @@ function mousePressed() {
       for (var b = 0; b < 19; b++) {
         if (mouseX > f * 60 && mouseX < f * 60 + 60 && mouseY > b * 60 && mouseY < b * 60 + 60 && board[f][b] == 2) {
           board[f][b] = 0;
-          whiteCapture ++;
+          whiteCapture++;
         } else if (mouseX > f * 60 && mouseX < f * 60 + 60 && mouseY > b * 60 && mouseY < b * 60 + 60 && board[f][b] == 1) {
           board[f][b] = 0;
-          blackCapture ++;
+          blackCapture++;
         }
 
       }
