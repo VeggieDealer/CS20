@@ -6,6 +6,7 @@ function startGame() {
     circles[circles.length - 1].y = random(200, 950);
   }
 
+  time = Math.floor(frameCount / 60);
   stroke(0);
   fill("skyblue");
   rect(0, 0, 999, 150);
@@ -13,7 +14,7 @@ function startGame() {
   fill("black");
   textSize(30);
   text("Your Accuracy: " + Math.floor(accHit / accMissed * 100) + "%", 50, 50);
-  text("Time: " + Math.floor(frameCount / 60), 50, 100);
+  text("Time: " + time, 50, 100);
   if (gone == 0) {
     image(lives, 500, 50, 50, 50);
     image(lives, 560, 50, 50, 50);
@@ -24,7 +25,7 @@ function startGame() {
   } else if (gone == 2) {
     image(lives, 500, 50, 50, 50);
   } else if (gone > 2) {
-    udfji
+    ashfdgn
   }
 
   for (i = 0; i < circles.length; i++) {
@@ -45,5 +46,13 @@ function startGame() {
   if (spawnSpeed < 20) {
     spawnSpeed = 20;
   }
+
+}
+
+function localStorage() {
+  if (typeof(Storage) !== "undefined") {
+
+  }
+
 
 }

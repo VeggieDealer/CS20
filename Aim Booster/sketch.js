@@ -9,6 +9,7 @@ var accHit = 1;
 var accMissed = 1;
 var spawnSpeed = 40;
 var gone = 0;
+var time = 0;
 
 function preload() {
   lives = loadImage("images/heart.png");
@@ -22,6 +23,7 @@ function setup() {
 
 function draw() {
   startGame();
+  localStorage();
 }
 
 

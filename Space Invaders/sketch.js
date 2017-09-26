@@ -2,10 +2,13 @@ var shooter = {
   x: 400,
   y: 820,
   xSpeed: 0,
-  bulletX: NaN,
-  bulletY: NaN
 }
+var shootShot[]
 
+var shoot = {
+  x: 0,
+  y: 0,
+}
 
 
 // SETUP FUNCTION - Runs once at beginning of program
@@ -19,7 +22,7 @@ function setup() {
 function draw() {
   background(0);
   rect(shooter.x, 820, 100, 75)
-
+  rect()
 
   if(shooter.x > width - 100) {
     shooter.x = width - 100;
@@ -37,6 +40,10 @@ function keyPressed() {
   }
   if (keyCode == RIGHT_ARROW) {
       shooter.xSpeed = 2;
+  }
+  if (keyCode == 32) {
+    shooter.bulletX = shooter.x;
+    shooter.bulletY = shooter.y;
   }
 }
 function keyReleased() {
