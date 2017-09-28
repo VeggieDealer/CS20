@@ -27,6 +27,8 @@ function drawMap() {
   line(425,600,425,425)
 }
 function drawCharacter() {
-  ellipse(runling.x, runling.y, 5,5);
+  stroke("blue")
+  strokeWeight(1);
+  ellipse(runling.x, runling.y, 2);
 
 }
