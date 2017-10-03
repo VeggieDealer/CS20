@@ -1,34 +1,63 @@
 function drawMap() {
-  strokeWeight(4);
+  strokeWeight(10);
   stroke(0);
-  line(0, 75, 1125, 75);
-  line(1125, 75, 1125, 925);
-  line(1125, 925, 75, 925);
-  line(75, 925, 75, 125);
-  line(75, 125, 1060, 125);
-  line(1060, 125, 1060, 875);
-  line(1060, 875, 150, 875);
-  line(150, 875, 150, 190);
-  line(150, 190, 990, 190);
-  line(990, 190, 990, 800);
-  line(990, 800, 210, 800);
-  line(210, 800, 210, 250);
-  line(210, 250, 925, 250);
-  line(925, 250, 925, 750);
-  line(925, 750, 275, 750);
-  line(275, 750, 275, 300);
-  line(275, 300, 850, 300);
-  line(850, 300, 850, 675);
-  line(850,675,350,675);
-  line(350,675,350,375);
-  line(350,375,775,375);
-  line(775,375,775,600);
-  line(775,600,425,600);
-  line(425,600,425,425)
+  line(0, 100, 1375, 100);
+  line(1375, 100, 1375, 1200);
+  line(1375, 1200, 100, 1200);
+  line(100, 1200, 100, 200);
+  line(100, 200, 1250, 200);
+  line(1250, 200, 1250, 1100);
+  line(1250, 1100, 200, 1100);
+  line(200, 1100, 200, 300);
+  line(200, 300, 1150, 300);
+  line(1150, 300, 1150, 1025);
+  line(1150, 1025, 300, 1025);
+  line(300, 1025, 300, 375);
+  line(300, 375, 1050, 375);
+  line(1050, 375, 1050, 950);
+  line(1050, 950, 400, 950);
+  line(400, 950, 400, 475);
+  line(400, 475, 950, 475);
+  line(950, 475, 950, 850);
+  line(950, 850, 500, 850);
+  line(500, 850, 500, 550);
+  line(500, 550, 850, 550);
+  line(850, 550, 850, 775);
+  line(850, 775, 600, 775);
+  line(600, 775, 600, 650)
 }
+
 function drawCharacter() {
   stroke("blue")
   strokeWeight(1);
-  ellipse(runling.x, runling.y, 2);
+  fill("blue");
+  ellipse(runling.position.x, runling.position.y, 4);
 
+}
+
+function boundaries() {
+  //checking which lane the character is in
+
+  if (runling.x > 0 && runling.x < width - 122 && runling.y > 0 && runling.y < 90) {
+    lane = 1;
+  } else if (runling.x > 1300 && runling.x < width && runling.y > 0 && runling.y < length) {
+    lane = 2;
+  }
+
+
+
+
+
+
+
+  //boundaries
+  if (runling.x <= 5) {
+    runling.x = 5;
+  }
+  if (runling.y <= 5) {
+    runling.y = 5;
+  }
+  if (runling.y > 90 && runling.y < 101 && lane == 1) {
+    runling.y = 90;
+  }
 }
