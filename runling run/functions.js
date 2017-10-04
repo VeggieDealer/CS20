@@ -38,26 +38,27 @@ function drawCharacter() {
 function boundaries() {
   //checking which lane the character is in
 
-  if (runling.x > 0 && runling.x < width - 122 && runling.y > 0 && runling.y < 90) {
+  if (runling.position.x > 0 && runling.position.x < 1375 && runling.position.y > 0 && runling.position.y < 107) {
     lane = 1;
-  } else if (runling.x > 1300 && runling.x < width && runling.y > 0 && runling.y < length) {
+  } else if (runling.position.x > 1370 && runling.position.x < width && runling.position.y > 0 && runling.position.y < height) {
     lane = 2;
+  } else if (runling.position.x < 1375 && runling.position.x > 0 && runling.position.y > 1200 && runling.position.y < height) {
+    lane = 3;
+  } else if (runling.position.x < 100 && runling.position.x > 0 && runling.position.y > 95 && runling.position.y < height) {
+    lane = 4;
   }
-
-
-
-
-
 
 
   //boundaries
-  if (runling.x <= 5) {
-    runling.x = 5;
+  if (runling.position.x <= 5) {
+    runling.position.x = 5;
   }
-  if (runling.y <= 5) {
-    runling.y = 5;
+  if (runling.position.y <= 5) {
+    runling.position.y = 5;
   }
-  if (runling.y > 90 && runling.y < 101 && lane == 1) {
-    runling.y = 90;
+  if (runling.position.y > 93 && runling.position.y < 107 && lane == 1) {
+    runling.position.y = 90;
+  } else if (runling.position.x > 1370 && runling.position.x < 1380 && runling.position.y > 107 && runling.position.y < 1200 && lane == 2) {
+    runling.position.x = 1381;
   }
 }

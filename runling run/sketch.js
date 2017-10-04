@@ -1,12 +1,12 @@
 let runlingDestination;
 let runling = {
   position: 0,
-  speed: 5
+  speed: 2.5
 }
 let runlingMove = false;
 let moveVector = false;
 drones = [];
-baseDrone = {
+let baseDrone = {
   x: 0,
   y: 0,
   r: 15,
@@ -17,6 +17,7 @@ let lane = 0;
 let rise;
 let run;
 let slope;
+let speedComplete = false;
 // SETUP FUNCTION - Runs once at beginning of program
 function setup() {
   createCanvas(1500, 1300);
@@ -51,15 +52,31 @@ function draw() {
     drones.push(Object.assign({}, baseDrone));
     drones[drones.length - 1].x = random(100, 1350);
     drones[drones.length - 1].y = random(10, 95);
-    drones[drones.length - 1].xMove = random(-1, 2);
-    while (drones[drones.length - 1].xMove < 0.2 && drones[drones.length - 1].xMove > -0.2) {
-      drones[drones.length - 1].xMove = random(-1, 2);
+    drones[drones.length - 1].xMove = random(-1, 1);
+    if (drones[drones.length - 1].xMove < 0.9 && drones[drones.length - 1].xMove > -0.9 && drones[drones.length - 1].yMove < 0.9 && drones[drones.length - 1].xMove > -0.9) {
+      drones[drones.length - 1].xMove = random(-1, 1);
+      drones[drones.length - 1].yMove = random(-1, 1);
+      speedComplete = false;
+    } else {
+      speedComplete = true;
     }
-    drones[drones.length - 1].yMove = random(-1, 2);
-    while (drones[drones.length - 1].yMove < 0.1 && drones[drones.length - 1].yMove > -0.1) {
-      drones[drones.length - 1].yMove = random(-1, 2);
+    if (speedComplete) {
+      while (drones[drones.length - 1].xMove < 0.2 && drones[drones.length - 1].xMove > -0.2) {
+        drones[drones.length - 1].xMove = random(-1, 1);
+      }
+      drones[drones.length - 1].yMove = random(-1, 1);
+      while (drones[drones.length - 1].yMove < 0.1 && drones[drones.length - 1].yMove > -0.1) {
+        drones[drones.length - 1].yMove = random(-1, 1);
+      }
     }
     droneNumber++;
+
+  }
+  if (droneNumber < 15) {
+    drones.push(Object.assign({}, baseDrone));
+    drones[drones.length - 1].x = random(1350, 1490);
+    drones[drones.length - 1].y = random(107, 1100);
+    drones[drones.length - 1].xMove = random(-1, 1);
   }
 
 
