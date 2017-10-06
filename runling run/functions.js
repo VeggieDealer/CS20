@@ -56,7 +56,7 @@ function boundaries() {
   if (runling.position.y <= 5) {
     runling.position.y = 5;
   }
-  if (runling.position.y > 93 && runling.position.y < 107 && lane == 1) {
+  if (runling.position.y > 93 && lane == 1) {
     runling.position.y = 90;
   } else if (runling.position.x > 1370 && runling.position.x < 1380 && runling.position.y > 107 && runling.position.y < 1200 && lane == 2) {
     runling.position.x = 1381;
