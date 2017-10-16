@@ -48,6 +48,15 @@ function boundaries() {
     lane = 4;
   }
 
+  if (runling.speed < 0.9 && lane == 2) {
+    runling.speed += 0.2
+  } else if (runling.speed < 1.1 && lane == 3) {
+    runling.speed += 0.2;
+  } else if (runling.speed < 1.3 && lane == 4) {
+    runling.speed += 0.2;
+  }
+
+
 
   //boundaries
   if (runling.position.x <= 5) {

@@ -1,7 +1,7 @@
 let runlingDestination;
 let runling = {
   position: 0,
-  speed: 2
+  speed: 0.7
 }
 let runlingMove = false;
 let moveVector = false;
@@ -42,27 +42,20 @@ function draw() {
 
   stroke(0);
 
-
-
-  //angled movement?
-  rise = runlingDestination.y - runling.position.y;
-  run = runlingDestination.x - runling.position.x;
-  slope = rise / run;
-
   // Assigning the drones random spots within the lane and giving them random speeds
   if (droneNumber < 15) {
     drones.push(Object.assign({}, baseDrone));
     drones[drones.length - 1].x = random(100, 1350);
     drones[drones.length - 1].y = random(10, 95);
-    drones[drones.length - 1].xMove = random(-2, 2);
+    drones[drones.length - 1].xMove = random(-1, 1);
 
 
     while (drones[drones.length - 1].xMove < 0.2 && drones[drones.length - 1].xMove > -0.2) {
-      drones[drones.length - 1].xMove = random(-2, 2);
+      drones[drones.length - 1].xMove = random(-1, 1);
     }
-    drones[drones.length - 1].yMove = random(-2, 2);
+    drones[drones.length - 1].yMove = random(-1, 1);
     while (drones[drones.length - 1].yMove < 0.1 && drones[drones.length - 1].yMove > -0.1) {
-      drones[drones.length - 1].yMove = random(-2, 2);
+      drones[drones.length - 1].yMove = random(-1, 1);
     }
 
     droneNumber++;
@@ -84,13 +77,12 @@ function draw() {
     ellipse(drones[i].x, drones[i].y, drones[i].r);
     drones[i].x += drones[i].xMove;
     drones[i].y += drones[i].yMove;
+    // first lane drones
     if (drones[i].x < 107 && drones[i].x > 100 && drones[i].y > 10 && drones[i].y < 97) {
       drones[i].xMove *= -1;
     } else if (drones[i].x > 1370 && drones[i].x < 1375 && drones[i].y > 10 && drones[i].y < 97) {
       drones[i].xMove *= -1;
     }
-
-
     if (drones[i].y < 10) {
       drones[i].yMove *= -1;
     } else if (drones[i].y > 97 && drones[i].y < 100 && drones[i].x > 107) {
@@ -99,12 +91,13 @@ function draw() {
       drones[i].yMove *= -1;
     }
 
+// second lane drones
     if (drones[i].x < 1380 && drones[i].x > 1375 && drones[i].y > 100) {
       drones[i].xMove *= -1;
     } else if (drones[i].x > width && drones[i].y > 100) {
       drones[i].xMove *= -1;
     }
-    if (drones[i].y < 100 && drones[i].x < width && drones[i].x > 1380) {
+    if (drones[i].y < 105 && drones[i].x < width && drones[i].x > 1380) {
       drones[i].yMove *= -1;
     } else if (drones[i].y > 1200 && drones[i].x < width && drones[i].x > 1380) {
       drones[i].yMove *= -1;
