@@ -15,6 +15,7 @@ function startGame() {
   textSize(30);
   text("Your Accuracy: " + Math.floor(accHit / accMissed * 100) + "%", 50, 50);
   text("Time: " + time, 50, 100);
+  text("High score:" + highScore, 200, 100);
   if (gone == 0) {
     image(lives, 500, 50, 50, 50);
     image(lives, 560, 50, 50, 50);
@@ -25,7 +26,7 @@ function startGame() {
   } else if (gone == 2) {
     image(lives, 500, 50, 50, 50);
   } else if (gone > 2) {
-    ashfdgn
+    add
   }
 
   for (i = 0; i < circles.length; i++) {
@@ -49,10 +50,11 @@ function startGame() {
 
 }
 
-function localStorage() {
-  if (typeof(Storage) !== "undefined") {
-
+function localStorages() {
+  if (highScore > time) {
+    localStorage.setItem('highScore', highScore);
+  } else {
+    localStorage.setItem('highScore', time);
   }
-
 
 }

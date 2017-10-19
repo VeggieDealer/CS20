@@ -5,6 +5,7 @@ baseCircle = {
   r: 7,
   growthDirection: 1
 }
+var highScore;
 var accHit = 1;
 var accMissed = 1;
 var spawnSpeed = 40;
@@ -18,12 +19,12 @@ function preload() {
 function setup() {
   createCanvas(1000, 1000);
   background(color(185));
-
+  highScore = localStorage.getItem("highScore");
 }
 
 function draw() {
   startGame();
-  localStorage();
+  localStorages();
 }
 
 
